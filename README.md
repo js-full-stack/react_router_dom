@@ -159,4 +159,4 @@
 
 ![Пример](./img/example5.jpg)
 
-Проделываем то же самое для компонента AuthorsView ![Пример](./img/example6.jpg)
+Проделываем то же самое для компонента AuthorsView ![Пример](./img/example6.png)
