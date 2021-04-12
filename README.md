@@ -12,7 +12,7 @@
 
 [Workshow](#workshop)
 
-[Вложенная навигация](#вложенная_навигация)
+[Layered Navigation](#layered_navigation): создаем вложенную навигацию
 
 ---
 
@@ -163,4 +163,4 @@
 
 Проделываем то же самое для компонента AuthorsView ![Пример](./img/example6.png)
 
-#### Вложенная навигация
+#### Layered Navigation
