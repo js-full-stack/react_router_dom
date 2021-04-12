@@ -8,7 +8,7 @@
 
 ### NavLink
 
-- #### Example
+#### Example
 
 ### Switch
 
