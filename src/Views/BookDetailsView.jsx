@@ -1,9 +1,9 @@
 import { Component } from 'react';
 
-class BookDetailsView {
+class BookDetailsView extends Component {
   state = {};
   render() {
-    return <h1>Страница 1-й книги</h1>;
+    return <h1>Страница одной книги</h1>;
   }
 }
 

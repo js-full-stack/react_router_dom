@@ -1,8 +1,10 @@
 import { Route, NavLink, Switch } from 'react-router-dom';
 import HomeView from './Views/HomeView';
-import BooksView from './Views/BooksView/BooksviewClasses';
+import BooksView from './Views/BooksView/BooksViewClasses';
 import AuthorsView from './Views/AuthorsView/AuthorsViewHooks';
 import NotFoundViews from './Views/NotFoundView';
+import BookDetailsView from './Views/BookDetailsView';
+
 import './base.scss';
 
 function App() {
@@ -42,7 +44,9 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomeView} />
         <Route path="/authors" component={AuthorsView} />
-        <Route path="/books" component={BooksView} />
+        <Route path="/books/:bookId" component={BookDetailsView} />
+        <Route exact path="/books" component={BooksView} />
+
         <Route component={NotFoundViews} />
       </Switch>
     </nav>
