@@ -1,7 +1,9 @@
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import HomeView from './Views/HomeView';
 import AuthorsView from './Views/AuthorsView';
 import BooksView from './Views/BooksView';
+import NotFoundViews from './Views/NotFoundView';
+
 function App() {
   return (
     <nav>
@@ -17,9 +19,12 @@ function App() {
         </li>
       </ul>
 
-      <Route exact path="/" component={HomeView} />
-      <Route path="/authors" component={AuthorsView} />
-      <Route path="/books" component={BooksView} />
+      <Switch>
+        <Route exact path="/" component={HomeView} />
+        <Route path="/authors" component={AuthorsView} />
+        <Route path="/books" component={BooksView} />
+        <Route component={NotFoundViews} />
+      </Switch>
     </nav>
   );
 }
