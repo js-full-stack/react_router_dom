@@ -141,7 +141,11 @@
 ### Практика
 
 1. Используем [Json Server](https://www.npmjs.com/package/json-server) для
-   имитации бекенда
+   имитации бекенда.
+   - `npm db.json` в корне проекта json-server;
+   - `"api-server": "json-server --delay 300 --port 4040 --watch db.json"` в
+     `package.json scripts:{}`;
+   - файл `db.json` в корне проекта.
 2. Добавляем данные в `db.json`
    [из репозитория Репеты](https://github.com/luxplanjay/react-18/blob/07-react-router/db.json).
-3. Создаем компонент BooksView.
+3. Создаем компонент BooksView со стейтом.
