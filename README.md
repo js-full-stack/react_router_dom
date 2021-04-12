@@ -21,7 +21,8 @@ match)
 [Component\_\_BookDetailsViews](#component__bookdetailsviews) - создание
 вложенного компонента и варианты размещения в `<Route/>`
 
-[Storage_Dynamic_Parameters](#storage_dynamic_parameters)
+[Storage_Dynamic_Parameters](#storage_dynamic_parameters) - хранение
+динамических параметров
 
 ---
 
@@ -249,4 +250,12 @@ _Есть несколько способов сделать так, чтобы 
 
 ![Пример](./img/example7.png)
 
-StorageOfDynamicParameters
+Используем это, чтобы "достучаться" до `id` книги и запишем в компоненте
+`BookDatailsView`
+
+`return <h1>Страница одной книги {this.props.match.params.bookId}</h1>;`
+
+### Request_To_Render_One_Book
+
+Поскольку компонент `BookDatailsView` не вложен в `BooksView`, для получения
+данных для рендеринга 1-й книги нужно сделать отдельный http-запрос
