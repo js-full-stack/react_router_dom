@@ -47,6 +47,8 @@
 3. Пишем в App `<Route path="/" component={HomeView}` />
    `<Route path="/newpage" component={NewPage} `/>
 
+---
+
 ### CreateNavigation
 
 **Навигация делается не как ссылки на страницы,** т.к. при клике на ссылку
@@ -61,6 +63,8 @@
 Пример:
 
 ![Пример](./img/example.jpg)
+
+---
 
 ### [NavLink](#markdown-header-navlink)
 
@@ -93,6 +97,8 @@
 **`to === path`**
 
 ![Пример](./img/example3.jpg)
+
+---
 
 ### Компонент Switch
 
