@@ -1,5 +1,7 @@
 # Инструкция по работе с React Router
 
+[Quick start](#quick-start)
+
 1. Установить пакет react-router-dom
 2. В корневом index.js сделать import{BrowserRouter} from 'react-router-dom' и
    обернуть компонент App в BrowserRouter:
@@ -26,6 +28,10 @@
 
 ## Пример
 
+## Quick start
+
+Several quick start options are available:
+
 1. Создаем компонент домашней страницы HomeView
 2. Делаем import в App
 3. Пишем в App `<Route path="/" component={HomeView}` />
@@ -35,7 +41,7 @@
 
 **Навигация делается не как ссылки на страницы,** т.к. при клике на ссылку
 происходит перезагрузка страницы. Для создания навигации без перезагрузки
-страницы нужно **просто изменить URL в адресной строке** Для этого:
+страницы нужно **просто изменить URL в адресной строке.** Для этого:
 
 1. Делаем в App `import {Link} from 'react-router-dom'` - аналог тега `<a>` с
    расширенным функционалом (изменяет url при клике без перезагрузки)
