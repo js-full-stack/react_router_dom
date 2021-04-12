@@ -1,4 +1,4 @@
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 import HomeView from './Views/HomeView';
 import AuthorsView from './Views/AuthorsView';
 import BooksView from './Views/BooksView';
@@ -9,13 +9,13 @@ function App() {
     <nav>
       <ul>
         <li>
-          <Link to="/">Homepage</Link>
+          <NavLink to="/">Homepage</NavLink>
         </li>
         <li>
-          <Link to="/authors">Authors</Link>
+          <NavLink to="/authors">Authors</NavLink>
         </li>
         <li>
-          <Link to="/books">Books</Link>
+          <NavLink to="/books">Books</NavLink>
         </li>
       </ul>
 
