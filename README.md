@@ -42,4 +42,4 @@
 
 Пример:
 
-![Пример](./example.jpg)
+![Пример](./img/example.jpg)
