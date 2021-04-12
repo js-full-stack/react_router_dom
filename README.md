@@ -169,7 +169,10 @@ html-элемент_
 
 ![Пример](./img/example5.jpg)
 
-Проделываем то же самое для компонента AuthorsView ![Пример](./img/example6.png)
+Проделываем то же самое для компонента AuthorsView, только меняем названия с
+Books на Authors, а с сервера извлекаем не `{title}`, а `{name }`
+
+![Пример](./img/example6.png)
 
 #### LayeredNavigation
 
