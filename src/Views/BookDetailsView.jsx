@@ -33,7 +33,7 @@ class BookDetailsView extends Component {
         <h1>Название книги: {title}</h1>
         <p>Жанр: {genre}</p>
         <p>Описание: {descr}</p>
-        <img src={imgUrl} alt="" />
+        <img src={imgUrl} alt={title} />
       </>
     );
   }

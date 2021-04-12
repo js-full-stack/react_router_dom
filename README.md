@@ -275,3 +275,39 @@ _Есть несколько способов сделать так, чтобы 
 Рабочий компонент выглядит так: ![Пример](./img/example8.png)
 
 ### NestedRoute
+
+**Задача**: при клике на имя автора должен рендериться список его книг, но не на
+отдельной странице, а под списком автором.
+
+Для решения нужно
+
+##### 1 - создать динамический маршрут в компоненте AuthorsView
+
+```
+ render() {
+    const { authors } = this.state;
+    const { url } = this.props.match;
+
+
+    return (
+      <>
+        <h1>Books</h1>
+        <ul>
+          {authors.map(({ name, id }) => (
+            <li key={id}>
+              <NavLink to={`${url}/${id}`}>{name}</NavLink>
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
+```
+
+##### 2 - добавить в папку `Components` компонент `AuthorBooks`,
+
+##### 3 - добавить `Route` в компонент `AuthorsView` после `<ul>`, чтобы он рендерил дополнительный кусок интерфейса из `AuthorBooks`
+
+`<Route path={`${path}/:authorId`} component={AuthorBooks}/>`
+
+##### 4 - поставить в адрес GET-запроса 'http://localhost:4040/authors?\_embed=books/' вместо 'http://localhost:4040/authors', чтобы сразу получать книги, и передавать их пропсом в компонент `AuthorBooks`

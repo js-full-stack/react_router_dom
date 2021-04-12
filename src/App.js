@@ -1,7 +1,7 @@
 import { Route, NavLink, Switch } from 'react-router-dom';
 import HomeView from './Views/HomeView';
+import AuthorsView from './Views/AuthorsView/AuthorsViewClasses';
 import BooksView from './Views/BooksView/BooksViewClasses';
-import AuthorsView from './Views/AuthorsView/AuthorsViewHooks';
 import NotFoundViews from './Views/NotFoundView';
 import BookDetailsView from './Views/BookDetailsView';
 
