@@ -12,7 +12,7 @@ class AuthorsView extends Component {
   async componentDidMount() {
     //*Сразу же забираем с сервера не только авторов, но и книги, чтобы после передать их пропсом в AuthorBooks
     const repsonse = await Axios.get(
-      'http://localhost:4040/authors?_embed=books/',
+      'http://localhost:4040/authors?_embed=books',
     );
     this.setState({
       authors: repsonse.data,

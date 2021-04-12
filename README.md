@@ -281,7 +281,7 @@ _Есть несколько способов сделать так, чтобы 
 
 Для решения нужно
 
-##### 1 - создать динамический маршрут в компоненте AuthorsView
+1. создать динамический маршрут в компоненте AuthorsView
 
 ```
  render() {
@@ -304,10 +304,19 @@ _Есть несколько способов сделать так, чтобы 
   }
 ```
 
-##### 2 - добавить в папку `Components` компонент `AuthorBooks`,
+2. добавить в папку `Components` компонент `AuthorBooks`,
 
-##### 3 - добавить `Route` в компонент `AuthorsView` после `<ul>`, чтобы он рендерил дополнительный кусок интерфейса из `AuthorBooks`
+3. поставить в адрес GET-запроса `http://localhost:4040/authors?_embed=books`
+   вместо ~~http://localhost:4040/authors~~, чтобы сразу получать книги, и
+   передавать их пропсом в компонент `AuthorBooks`. Альтернатива - делать еще 1
+   get-запрос
 
-`<Route path={'${path}/:authorId'} component={AuthorBooks}/>`
+4. добавить `Route` в компонент `AuthorsView` после `<ul>`, чтобы он рендерил
+   дополнительный кусок интерфейса из `AuthorBooks`. Используем здесь метод
+   render, чтобы передать несколько пропсов
 
-##### 4 - поставить в адрес GET-запроса 'http://localhost:4040/authors?\_embed=books/' вместо 'http://localhost:4040/authors', чтобы сразу получать книги, и передавать их пропсом в компонент `AuthorBooks`. Альтернатива - делать еще 1 get-запрос
+`<Route path={'${path}/:authorId'} render={props => <AuthorBooks {...props}/>} component={AuthorBooks}/>`
+
+В параметр `props` метода `render` приходят дефолтные пропсы, которые есть на
+Route: нistory, location, match. Мы их распыляем, чтобы далее использовать в
+компоненте `AuthorsBooks`
