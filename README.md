@@ -10,6 +10,8 @@
 
 [Switch](#switch)
 
+[Workshow](#workshop)
+
 ---
 
 ### Start
@@ -138,7 +140,7 @@
 
 ---
 
-### Практика
+### Workshop
 
 1. Используем [Json Server](https://www.npmjs.com/package/json-server) для
    имитации бекенда.
