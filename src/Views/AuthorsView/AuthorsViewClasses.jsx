@@ -33,7 +33,12 @@ class AuthorsView extends Component {
             </li>
           ))}
         </ul>
-        <Route path={`${path}/:authorId`} component={AuthorBooks} />
+        <Route
+          path={`${path}/:authorId`}
+          render={props => {
+            return <AuthorBooks {...props} authors={authors} />;
+          }}
+        />
       </>
     );
   }

@@ -315,7 +315,12 @@ _Есть несколько способов сделать так, чтобы 
    дополнительный кусок интерфейса из `AuthorBooks`. Используем здесь метод
    render, чтобы передать несколько пропсов
 
-`<Route path={'${path}/:authorId'} render={props => <AuthorBooks {...props}/>} component={AuthorBooks}/>`
+---
+
+<Route path={`${path}/:authorId`} render={props => { return <AuthorBooks
+{...props} authors={authors} />; }} />
+
+---
 
 В параметр `props` метода `render` приходят дефолтные пропсы, которые есть на
 Route: нistory, location, match. Мы их распыляем, чтобы далее использовать в
