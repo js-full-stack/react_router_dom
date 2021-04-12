@@ -2,30 +2,25 @@
 
 ## Содержание:
 
-[Start](#start)
+[Начало](#start)
 
-[CreateNavigation](#createnavigation)
+[Создание навигации](#createnavigation)
 
-[NavLink](#navlink)
+[Компонент NavLink](#navlink)
 
-[Switch](#switch)
+[Компонент Switch](#switch)
 
-[Workshow](#workshop)
+[Workshop: практика](#workshop)
 
-[LayeredNavigation](#layerednavigation) - создаем вложенную навигацию при помощи
-динамического параметра **`?`**
+[Создаем вложенную навигацию динамически](#layerednavigation)
 
-[AdditionalProps](#additionalprops) - дополнительные пропсы (нistory, location,
-match)
+[Дополнительные пропсы: нistory, location, match](#additionalprops) -
 
-[Component\_\_BookDetailsViews](#component__bookdetailsviews) - создание
-вложенного компонента и варианты размещения в `<Route/>`
+[Cоздание вложенного компонента и варианты размещения в `<Route/>`](#component__bookdetailsviews) -
 
-[Storage_Dynamic_Parameters](#storage_dynamic_parameters) - хранение
-динамических параметров
+[Хранение динамических параметров](#storage_dynamic_parameters) -
 
-[Request_To_Render_One_Book](#request_to_render_one_book) - создание
-http-запроса для получения данных для рендера одной книги
+[Создание http-запроса для получения данных для рендера одной книги](#request_to_render_one_book) -
 
 ---
 
