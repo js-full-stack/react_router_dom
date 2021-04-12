@@ -4,9 +4,9 @@
 2. В корневом index.js сделать import{BrowserRouter} from 'react-router-dom' и
    обернуть компонент App в BrowserRouter:
 
-<BrowserRouter>
-  <App />
-</BrowserRouter>
+   <BrowserRouter>
+   <App />
+   </BrowserRouter>
 
 3. Создать в папке src папку views для компонентов-страниц, которые будут
    рендериться
