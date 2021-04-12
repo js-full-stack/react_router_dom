@@ -14,6 +14,10 @@
 
 ## Start
 
+... ... ...
+
+## Quick start
+
 1. Установить пакет react-router-dom
 2. В корневом index.js сделать import{BrowserRouter} from 'react-router-dom' и
    обернуть компонент App в BrowserRouter:
@@ -40,7 +44,7 @@
 
 #### Example
 
-Several quick start options are available:
+[Quick start](#quick-start) Several quick start options are available:
 
 1. Создаем компонент домашней страницы HomeView
 2. Делаем import в App
