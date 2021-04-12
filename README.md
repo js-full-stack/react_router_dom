@@ -20,7 +20,7 @@
 
 [Хранение динамических параметров](#storage_dynamic_parameters) -
 
-[Создание http-запроса для получения данных для рендера одной книги](#request_to_render_one_book) -
+[Создание http-запроса для получения данных для рендера одной книги](#add_state_and_request_to_render_one_book) -
 
 ---
 
@@ -253,7 +253,21 @@ _Есть несколько способов сделать так, чтобы 
 
 `return <h1>Страница одной книги {this.props.match.params.bookId}</h1>;`
 
-### Request_To_Render_One_Book
+### Add_State_And_Request_To_Render_One_Book
 
 Поскольку компонент `BookDatailsView` не вложен в `BooksView`, для получения
-данных для рендеринга 1-й книги нужно сделать отдельный http-запрос
+данных для рендеринга 1-й книги нужно сделать отдельный стейт
+
+```
+  state = {
+    descr: null,
+    genre: null,
+    id: null,
+    imgUrl: null,
+  };
+```
+
+и http-запрос
+`const response = await axios.get(`http://localhost:4040/books/${bookId}`)`;
+
+Рабочий компонент выглядит так: ![Пример](./img/example8.png)
