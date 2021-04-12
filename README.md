@@ -10,6 +10,8 @@
 
 ### Switch
 
+## Start
+
 1. Установить пакет react-router-dom
 2. В корневом index.js сделать import{BrowserRouter} from 'react-router-dom' и
    обернуть компонент App в BrowserRouter:
