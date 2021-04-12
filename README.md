@@ -145,28 +145,16 @@
 1. Используем [Json Server](https://www.npmjs.com/package/json-server) для
    имитации бекенда.
 
-   - В package.json scripts:{}
+   - В объекте scripts файла package.json
      прописать`"api-server": "json-server --delay 300 --port 4040 --watch db.json"`
+     - создать `db.json` в корне проекта.
 
-- создать `db.json` в корне проекта.
-  - `npm run api-service`
+- запусить json-server командой `npm run api-server`
 
 2. Добавляем данные в `db.json`
    [из репозитория Репеты](https://github.com/luxplanjay/react-18/blob/07-react-router/db.json).
 3. Создаем компонент BooksView со стейтом
+4. Получаем список объектов книг через then или axios
+5. Выводим заголовки книг
 
-На классах:
-
-```
- state = {
-    books: [],
-  };
-```
-
-На хуках:
-
-```
- const [books, setBooks] = useState([]);
-```
-
-4.
+![Пример](./img/example5.jpg)
