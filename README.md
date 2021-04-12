@@ -15,7 +15,7 @@
 [LayeredNavigation](#layerednavigation): создаем вложенную навигацию при помощи
 динамического параметра **`?`**
 
-[Additional Props](#additional_props)
+[AdditionalProps](#additionalprops)
 
 ---
 
@@ -181,7 +181,7 @@
 
 ```
 
-#### Additional Props
+#### AdditionalProps
 
 \*\*Чтобы не страдать "антипаттерном" магических строк, не стоит использовать
 шаблонную строку при передаче пути. Для таких задач есть
