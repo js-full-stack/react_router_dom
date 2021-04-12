@@ -4,13 +4,15 @@
 
 [Start](#start)
 
-### CreateNavigation
+[CreateNavigation](#createnavigation)
 
-### NavLink
+[NavLink](#navlink)
 
-#### Example
+[Example](#example)
 
-### Switch
+[Switch](#switch)
+
+---
 
 ### Start
 
