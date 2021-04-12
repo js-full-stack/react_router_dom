@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class BooksView extends Component {
   state = {
@@ -18,10 +19,11 @@ class BooksView extends Component {
 
     return (
       <>
-        <h1>Books</h1>
         <ul>
           {books.map(({ title, id }) => (
-            <li key={id}>{title}</li>
+            <li key={id}>
+              <Link to={`${this.props.match.url}/${id}`}>{title}</Link>
+            </li>
           ))}
         </ul>
       </>
