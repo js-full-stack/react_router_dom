@@ -310,4 +310,4 @@ _Есть несколько способов сделать так, чтобы 
 
 `<Route path={'${path}/:authorId'} component={AuthorBooks}/>`
 
-##### 4 - поставить в адрес GET-запроса 'http://localhost:4040/authors?\_embed=books/' вместо 'http://localhost:4040/authors', чтобы сразу получать книги, и передавать их пропсом в компонент `AuthorBooks`
+##### 4 - поставить в адрес GET-запроса 'http://localhost:4040/authors?\_embed=books/' вместо 'http://localhost:4040/authors', чтобы сразу получать книги, и передавать их пропсом в компонент `AuthorBooks`. Альтернатива - делать еще 1 get-запрос
