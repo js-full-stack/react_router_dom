@@ -18,6 +18,8 @@
 [AdditionalProps](#additionalprops) - дополнительные пропсы (нistory, location,
 match)
 
+[Component\_\_BookDetailsViews](#component__bookdetailsviews)
+
 ---
 
 ### Start
@@ -214,7 +216,7 @@ Books на Authors, а с сервера извлекаем не `{title}`, а `
         ))} - хороший вариант
 ```
 
-**Следующий этап**
+#### Component\_\_BookDetailsViews
 
 1. Создадим компонент `BookDetailsView`, который будет рендериться на
    обозначенный `url` `(this.props.match.url)`
