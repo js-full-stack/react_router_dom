@@ -150,4 +150,18 @@
    - файл `db.json` в корне проекта.
 2. Добавляем данные в `db.json`
    [из репозитория Репеты](https://github.com/luxplanjay/react-18/blob/07-react-router/db.json).
-3. Создаем компонент BooksView со стейтом.
+3. Создаем компонент BooksView со стейтом
+
+На классах:
+
+```
+ state = {
+    books: [],
+  };
+```
+
+На хуках:
+
+```
+ const [books, setBooks] = useState([]);
+```
