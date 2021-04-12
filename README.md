@@ -308,6 +308,6 @@ _Есть несколько способов сделать так, чтобы 
 
 ##### 3 - добавить `Route` в компонент `AuthorsView` после `<ul>`, чтобы он рендерил дополнительный кусок интерфейса из `AuthorBooks`
 
-`<Route path={`${path}/:authorId`} component={AuthorBooks}/>`
+`<Route path={'${path}/:authorId'} component={AuthorBooks}/>`
 
 ##### 4 - поставить в адрес GET-запроса 'http://localhost:4040/authors?\_embed=books/' вместо 'http://localhost:4040/authors', чтобы сразу получать книги, и передавать их пропсом в компонент `AuthorBooks`
