@@ -1,5 +1,15 @@
 # Инструкция по работе с React Router
 
+## Содержание:
+
+### Start
+
+### CreateNavigation
+
+### NavLink
+
+### Switch
+
 [Quick start](#quick-start)
 
 1. Установить пакет react-router-dom
@@ -26,9 +36,7 @@
      более страниц, которые начинаются на одни и те же символы. Например '/'
      '/product', '/products'
 
-## Пример
-
-## Quick start
+## Example
 
 Several quick start options are available:
 
@@ -37,7 +45,7 @@ Several quick start options are available:
 3. Пишем в App `<Route path="/" component={HomeView}` />
    `<Route path="/newpage" component={NewPage} `/>
 
-## Создание навигации для перехода по страницам
+## CreateNavigation
 
 **Навигация делается не как ссылки на страницы,** т.к. при клике на ссылку
 происходит перезагрузка страницы. Для создания навигации без перезагрузки
@@ -52,7 +60,7 @@ Several quick start options are available:
 
 ![Пример](./img/example.jpg)
 
-### NavLink - компонент для стилизации
+### [NavLink](#markdown-header-navlink)
 
 Для добавления стилизации вместо {Link} можно использовать {NavLink}, у которого
 есть доп. пропы:
