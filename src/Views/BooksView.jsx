@@ -1,11 +1,13 @@
-const BooksView = () => {
-  return (
-    <ul>
-      <li>Мастер и Маргаритта</li>
-      <li>Пролетая над гнездом кукушки</li>
-      <li>На дне</li>
-    </ul>
-  );
-};
+import { Component } from 'react';
+
+class BooksView extends Component {
+  state = {
+    books: [],
+  };
+
+  render() {
+    return <ul></ul>;
+  }
+}
 
 export default BooksView;

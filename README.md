@@ -139,3 +139,9 @@
 ---
 
 ### Практика
+
+1. Используем [Json Server](https://www.npmjs.com/package/json-server) для
+   имитации бекенда
+2. Добавляем данные в `db.json`
+   [из репозитория Репеты](https://github.com/luxplanjay/react-18/blob/07-react-router/db.json).
+3. Создаем компонент BooksView.
