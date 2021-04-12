@@ -146,8 +146,8 @@
    имитации бекенда.
 
    - В объекте scripts файла package.json
-     прописать`"api-server": "json-server --delay 300 --port 4040 --watch db.json"`
-     - создать `db.json` в корне проекта.
+   - прописать`"api-server": "json-server --delay 300 --port 4040 --watch db.json"`
+   - создать `db.json` в корне проекта.
 
 - запусить json-server командой `npm run api-server`
 
