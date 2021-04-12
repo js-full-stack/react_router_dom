@@ -3,27 +3,39 @@ import HomeView from './Views/HomeView';
 import AuthorsView from './Views/AuthorsView';
 import BooksView from './Views/BooksView';
 import NotFoundViews from './Views/NotFoundView';
+import './base.scss';
 
 function App() {
   return (
     <nav>
       <ul>
         <li>
-          <NavLink to="/" className="NavLink" activeClassName="NavLink__active">
+          <NavLink
+            exact
+            to="/"
+            className="NavLink"
+            activeClassName="NavLink--active"
+          >
             Homepage
           </NavLink>
         </li>
         <li>
           <NavLink
+            exact
             to="/authors"
             className="NavLink"
-            activeClassName="NavLink__active"
+            activeClassName="NavLink--active"
           >
             Authors
           </NavLink>
         </li>
         <li>
-          <NavLink to="/books" style="NavLink" activeStyle="NavLink__active">
+          <NavLink
+            exact
+            to="/books"
+            className="NavLink"
+            activeClassName="NavLink--active"
+          >
             Books
           </NavLink>
         </li>
