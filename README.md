@@ -6,9 +6,7 @@
 
 [CreateNavigation](#createnavigation)
 
-[NavLink](#navlink)
-
-[Example](#example)
+[NavLink](#navlink) + [Example](#example)
 
 [Switch](#switch)
 
