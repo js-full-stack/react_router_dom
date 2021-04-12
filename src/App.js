@@ -10,18 +10,12 @@ function App() {
     <nav>
       <ul>
         <li>
-          <NavLink
-            exact
-            to="/"
-            className="NavLink"
-            activeClassName="NavLink--active"
-          >
+          <NavLink to="/" className="NavLink" activeClassName="NavLink--active">
             Homepage
           </NavLink>
         </li>
         <li>
           <NavLink
-            exact
             to="/authors"
             className="NavLink"
             activeClassName="NavLink--active"
@@ -31,7 +25,6 @@ function App() {
         </li>
         <li>
           <NavLink
-            exact
             to="/books"
             className="NavLink"
             activeClassName="NavLink--active"
