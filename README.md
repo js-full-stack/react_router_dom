@@ -6,7 +6,7 @@
 
 [CreateNavigation](#createnavigation)
 
-[NavLink](#navlink) + [Example](#example)
+[NavLink](#navlink)
 
 [Switch](#switch)
 
@@ -164,3 +164,6 @@
 Проделываем то же самое для компонента AuthorsView ![Пример](./img/example6.png)
 
 #### LayeredNavigation
+
+**Задача**: _при переходе на BooksView должна рендериться галерея книг, а при
+клике на конкретную страницу должен быть переход на отдельную страницу_
