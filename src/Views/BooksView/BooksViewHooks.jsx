@@ -16,7 +16,11 @@ const BooksView = () => {
       <h1>Books</h1>
       <ul>
         {books.map(({ title, id }) => (
-          <Link to={`books./${id}`}>{title}</Link>
+          <ul>
+            <li>
+              <Link to={`books./${id}`}>{title}</Link>
+            </li>
+          </ul>
         ))}
       </ul>
     </>
