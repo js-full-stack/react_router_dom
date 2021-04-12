@@ -317,8 +317,12 @@ _Есть несколько способов сделать так, чтобы 
 
 ---
 
-<Route path={`${path}/:authorId`} render={props => { return <AuthorBooks
-{...props} authors={authors} />; }} />
+      <Route
+          path={`${path}/:authorId`}
+          render={props => {
+            return <AuthorBooks {...props} authors={authors} />;
+          }}
+        />
 
 ---
 
