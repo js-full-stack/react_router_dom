@@ -21,6 +21,8 @@ match)
 [Component\_\_BookDetailsViews](#component__bookdetailsviews) - создание
 вложенного компонента и варианты размещения в `<Route/>`
 
+[Storage_Dynamic_Parameters](#storage_dynamic_parameters)
+
 ---
 
 ### Start
@@ -239,8 +241,12 @@ _Есть несколько способов сделать так, чтобы 
 
 Добавить `exact` на `<Route path="/books" component={BooksView} />`
 
-\_После добавления страницы `{BookDatailsView}` в `this.props.match` появился
+### Storage_Dynamic_Parameters
+
+После добавления страницы `{BookDatailsView}` в `this.props.match` появился
 параметр `params`, хранящий объект с ключем и значением динамического параметра
 свойство params, хранящее объект с динамическим параметром (`id`)
 
 ![Пример](./img/example7.png)
+
+StorageOfDynamicParameters
