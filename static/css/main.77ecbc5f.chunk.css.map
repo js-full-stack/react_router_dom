@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/base.scss"],"names":[],"mappings":"AAAA,SACE,cAAe,CACf,aAAc,CACf,iBAGC,aAAoB","file":"main.77ecbc5f.chunk.css","sourcesContent":[".NavLink {\n  font-size: 20px;\n  color: #2a2a2a;\n}\n\n.NavLink--active {\n  color: palevioletred;\n}\n"]}
