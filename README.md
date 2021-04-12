@@ -14,7 +14,8 @@
 
 ### Start
 
-1. Установить пакет react-router-dom
+1. Установить пакет
+   [react-router-dom](https://reactrouter.com/web/guides/quick-start)
 2. В корневом index.js сделать import{BrowserRouter} from 'react-router-dom' и
    обернуть компонент App в BrowserRouter:
 
