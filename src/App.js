@@ -9,13 +9,23 @@ function App() {
     <nav>
       <ul>
         <li>
-          <NavLink to="/">Homepage</NavLink>
+          <NavLink to="/" className="NavLink" activeClassName="NavLink__active">
+            Homepage
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/authors">Authors</NavLink>
+          <NavLink
+            to="/authors"
+            className="NavLink"
+            activeClassName="NavLink__active"
+          >
+            Authors
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/books">Books</NavLink>
+          <NavLink to="/books" style="NavLink" activeStyle="NavLink__active">
+            Books
+          </NavLink>
         </li>
       </ul>
 
