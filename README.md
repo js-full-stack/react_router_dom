@@ -2,7 +2,7 @@
 
 ## Содержание:
 
-### [Start](#start)
+[Start](#start)
 
 ### CreateNavigation
 
