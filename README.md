@@ -4,9 +4,11 @@
 2. В корневом index.js сделать import{BrowserRouter} from 'react-router-dom' и
    обернуть компонент App в BrowserRouter:
 
+   ```
    <BrowserRouter>
    <App />
    </BrowserRouter>
+   ```
 
 3. Создать в папке src папку views для компонентов-страниц, которые будут
    рендериться
@@ -26,8 +28,8 @@
 
 1. Создаем компонент домашней страницы HomeView
 2. Делаем import в App
-3. Пишем в App <Route path="/" component={HomeView} />
-   <Route path="/newpage" component={NewPage} />
+3. Пишем в App `<Route path="/" component={HomeView}` />
+   `<Route path="/newpage" component={NewPage} `/>
 
 ## Создание навигации для перехода по страницам
 
@@ -37,7 +39,7 @@
 
 1. Делаем в App import {Link} from 'react-router-dom' - аналог тега а с
    расширенным функционалом (изменяет url при клике без перезагрузки)
-2. Добавляем компонент <Link/> в App и добавляем пропсы:
+2. Добавляем компонент `g` в App и добавляем пропсы:
    - to - значение - строка адреса, куда надо перенаправить (относительно корня)
 
 Пример:
