@@ -18,8 +18,8 @@
 [AdditionalProps](#additionalprops) - дополнительные пропсы (нistory, location,
 match)
 
-[Component\_\_BookDetailsViews](#component__bookdetailsviews) - варианты
-размещения в `<Route/>`
+[Component\_\_BookDetailsViews](#component__bookdetailsviews) - создание
+вложенного компонента и варианты размещения в `<Route/>`
 
 ---
 
