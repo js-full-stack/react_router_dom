@@ -1,7 +1,7 @@
 import { Route, NavLink, Switch } from 'react-router-dom';
 import HomeView from './Views/HomeView';
-import AuthorsView from './Views/AuthorsView';
-import BooksView from './Views/BooksView';
+import BooksView from './Views/BooksView/BooksViewHooks';
+import AuthorsView from './Views/AuthorsView/AuthorsViewHooks';
 import NotFoundViews from './Views/NotFoundView';
 import './base.scss';
 
@@ -10,7 +10,12 @@ function App() {
     <nav>
       <ul>
         <li>
-          <NavLink to="/" className="NavLink" activeClassName="NavLink--active">
+          <NavLink
+            to="/"
+            exact
+            className="NavLink"
+            activeClassName="NavLink--active"
+          >
             Homepage
           </NavLink>
         </li>
