@@ -26,6 +26,12 @@
 
 [Рефакторинг кода с вложенной динамической маршрутизацией](#refactoring)
 
+## [Код с занятия](#allcode)
+
+[Код компонента BooksViewClasses](#booksviewclasses)
+[Код компонента AuthorsVies](#authorsview)
+[Код компонента AuthorBooks](#authorbooks) [Код компонента App][#app]
+
 ---
 
 ### Start
@@ -424,8 +430,8 @@ Route: `нistory`, `location`, `match`. Мы их распыляем, чтобы
 
 `return author && <AuthorBooks {...props} books={author.books} />;`
 
-Теперь в компонент `AuthorBooks` приходит один проп - `books` - массив с
-книгами. Достаточно его получить и перебрать мэпом
+В компонент `AuthorBooks` приходит один проп - `books` - массив с книгами.
+Достаточно его получить и перебрать мэпом
 
 ```
   render() {
@@ -438,4 +444,193 @@ Route: `нistory`, `location`, `match`. Мы их распыляем, чтобы
       </ul>
     );
   }
+```
+
+В завершение сделаем внешнюю навигацию для перенаправления со страницы
+`AuthorBooks` на `BooksDetailsView`. Для этого в компоненте `AuthorBooks`
+добавим
+
+```
+`<Link to={`books/${book.id}`}>{book.title}</Link>`
+```
+
+## AllCode
+
+#### AuthorBooks
+
+```
+import { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+class AuthorBooks extends Component {
+  render() {
+    const { books } = this.props;
+    return (
+      <ul>
+        {books.map(book => (
+          <li key={book.id}>
+            <Link to={`/books/${book.id}`}>{book.title}</Link>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+}
+
+export default AuthorBooks;
+```
+
+#### AuthorsView
+
+```
+import { Component } from 'react';
+import Axios from 'axios';
+import { NavLink, Route } from 'react-router-dom';
+
+import AuthorBooks from '../../Components/AuthorBooks';
+
+class AuthorsView extends Component {
+  state = {
+    authors: [],
+  };
+
+  async componentDidMount() {
+    const repsonse = await Axios.get(
+      'http://localhost:4040/authors?_embed=books',
+    );
+    this.setState({
+      authors: repsonse.data,
+    });
+  }
+  render() {
+    const { authors } = this.state;
+    const { url, path } = this.props.match;
+    return (
+      <>
+        <h1>Books</h1>
+        <ul>
+          {authors.map(({ name, id }) => (
+            <li key={id}>
+              <NavLink to={`${url}/${id}`}>{name}</NavLink>
+            </li>
+          ))}
+        </ul>
+
+        <Route
+          path={`${path}/:authorId`}
+          render={props => {
+            const bookId = Number(props.match.params.authorId);
+            const author = this.state.authors.find(({ id }) => id === bookId);
+
+            return author && <AuthorBooks {...props} books={author.books} />;
+          }}
+        />
+      </>
+    );
+  }
+}
+
+export default AuthorsView;
+```
+
+#### BooksViewClasses
+
+```
+import { Component } from 'react';
+import Axios from 'axios';
+import { Link, Route } from 'react-router-dom';
+
+class BooksView extends Component {
+  state = {
+    books: [],
+  };
+
+  async componentDidMount() {
+    const repsonse = await Axios.get('http://localhost:4040/books/');
+    this.setState({
+      books: repsonse.data,
+    });
+  }
+
+  render() {
+    const { books } = this.state;
+
+    return (
+      <>
+        <ul>
+          {books.map(({ title, id }) => (
+            <li key={id}>
+              <Link to={`${this.props.match.url}/${id}`}>{title}</Link>
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
+}
+
+export default BooksView;
+
+```
+
+#### App
+
+```
+import { Route, NavLink, Switch } from 'react-router-dom';
+import HomeView from './Views/HomeView';
+import AuthorsView from './Views/AuthorsView/AuthorsViewClasses';
+import BooksView from './Views/BooksView/BooksViewClasses';
+import NotFoundViews from './Views/NotFoundView';
+import BookDetailsView from './Views/BookDetailsView';
+
+import './base.scss';
+
+function App() {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <NavLink
+            to="/"
+            exact
+            className="NavLink"
+            activeClassName="NavLink--active"
+          >
+            Homepage
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/authors"
+            className="NavLink"
+            activeClassName="NavLink--active"
+          >
+            Authors
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/books"
+            className="NavLink"
+            activeClassName="NavLink--active"
+          >
+            Books
+          </NavLink>
+        </li>
+      </ul>
+
+      <Switch>
+        <Route exact path="/" component={HomeView} />
+        <Route path="/authors" component={AuthorsView} />
+        <Route path="/books/:bookId" component={BookDetailsView} />
+        <Route exact path="/books" component={BooksView} />
+
+        <Route component={NotFoundViews} />
+      </Switch>
+    </nav>
+  );
+}
+
+export default App;
+
 ```

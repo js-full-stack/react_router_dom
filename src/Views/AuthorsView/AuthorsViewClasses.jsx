@@ -10,7 +10,6 @@ class AuthorsView extends Component {
   };
 
   async componentDidMount() {
-    //*Сразу же забираем с сервера не только авторов, но и книги, чтобы после передать их пропсом в AuthorBooks
     const repsonse = await Axios.get(
       'http://localhost:4040/authors?_embed=books',
     );
@@ -32,28 +31,15 @@ class AuthorsView extends Component {
           ))}
         </ul>
 
-        {
-          /* this.state.authors.length > 0 &&  */ <Route
-            path={`${path}/:authorId`}
-            render={props => {
-              // *здесь не нужно this, т.к. мы выполняем код непосредственно в Route и обращаемся к дефолтным пропам этого же компонента
+        <Route
+          path={`${path}/:authorId`}
+          render={props => {
+            const bookId = Number(props.match.params.authorId);
+            const author = this.state.authors.find(({ id }) => id === bookId);
 
-              const bookId = Number(props.match.params.authorId);
-
-              // *здесь также используем find, но получаем данные не из пропсов, а из стейта
-
-              const author = this.state.authors.find(({ id }) => id === bookId);
-
-              if (author) {
-                console.log(author.books);
-              }
-              console.log(author);
-
-              // * Асли массив author не пуст, возвращаем спсок книг, иначе null
-              return author && <AuthorBooks {...props} books={author.books} />;
-            }}
-          />
-        }
+            return author && <AuthorBooks {...props} books={author.books} />;
+          }}
+        />
       </>
     );
   }
