@@ -287,7 +287,9 @@ _Есть несколько способов сделать так, чтобы 
 и http-запрос
 `const response = await axios.get('http://localhost:4040/books/${bookId}')`;
 
-Рабочий компонент выглядит так: ![Пример](./img/example8.png)
+Рабочий компонент выглядит так:
+
+![Пример](./img/example8.png)
 
 ### NestedRoute
 
