@@ -32,8 +32,8 @@
    [react-router-dom](https://reactrouter.com/web/guides/quick-start)
    `npm install react-router-dom`
 
-2. В корневом index.js сделать import{BrowserRouter} from 'react-router-dom' и
-   обернуть компонент App в BrowserRouter:
+2. В корневом `index.js` сделать `import{BrowserRouter} from 'react-router-dom'`
+   и обернуть компонент `App` в `BrowserRouter`:
 
    ```
    <BrowserRouter>
@@ -345,6 +345,8 @@ _Есть несколько способов сделать так, чтобы 
 Route: `нistory`, `location`, `match`. Мы их распыляем, чтобы далее использовать
 в компоненте `AuthorsBooks`.
 
+![Пример](./img/example9.jpg)
+
 Теперь пропы доступны в `AuthorBooks` и можно получить нужные данные:
 
 - `this.props.match.params.authorId` - динамический параметр (`id`),
@@ -352,5 +354,10 @@ Route: `нistory`, `location`, `match`. Мы их распыляем, чтобы
 
 При клике на `<Link>` в компонент `AuthorsBooks` приходят новые пропсы. При этом
 компонент `AuthorsView` не размонтируется, а `AuthorsBooks` рендерится как
-дополнительный контент, т.е. при обновлении. Следовательно, логика для рендера
-`AuthorsBooks` прописывается в методе `ComponentDidUpdate()`.
+дополнительный контент, т.е. при обновлении.
+
+Логика для компннента `AuthorsBooks` выглядит так:
+
+1. В `ComponentDidMount()` получаем массив книга выбранного автора, используя
+метод `find`. Сохраняем их в `state`.
+<!-- 2. В `ComponentDidUpdate()` прописываем логику -->

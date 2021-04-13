@@ -1,8 +1,8 @@
-import AuthorBooks from '../../Components/AuthorBooks';
-
 import { Component } from 'react';
 import Axios from 'axios';
 import { NavLink, Route } from 'react-router-dom';
+
+import AuthorBooks from '../../Components/AuthorBooks';
 
 class AuthorsView extends Component {
   state = {
@@ -18,11 +18,9 @@ class AuthorsView extends Component {
       authors: repsonse.data,
     });
   }
-
   render() {
     const { authors } = this.state;
     const { url, path } = this.props.match;
-
     return (
       <>
         <h1>Books</h1>
@@ -33,11 +31,10 @@ class AuthorsView extends Component {
             </li>
           ))}
         </ul>
+
         <Route
           path={`${path}/:authorId`}
-          render={props => {
-            return <AuthorBooks {...props} authors={authors} />;
-          }}
+          render={props => <AuthorBooks {...props} authors={authors} />}
         />
       </>
     );

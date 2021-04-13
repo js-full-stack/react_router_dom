@@ -1,20 +1,36 @@
 import { Component } from 'react';
 
 class AuthorBooks extends Component {
-  state = {};
+  state = {
+    books: [],
+  };
 
   componentDidMount() {
-    console.log(Number(this.props.match.params.authorId));
-    console.log(this.props.authors);
+    console.log('componentDidMount');
+    const id = Number(this.props.match.params.authorId);
+
+    const books = this.props.authors.find(author => author.id === id);
+
+    this.setState({ books });
   }
 
   componentDidUpdate(prevProps, prevState) {
+    console.log('componentDidUpdate');
     console.log(Number(this.props.match.params.authorId));
     console.log(this.props.authors);
   }
 
   render() {
-    return <h1>Компонент книги автора</h1>;
+    // const { books } = this.state.books;
+    // console.log(books);
+    return (
+      <ul>
+        {/* {books.map(book => (
+          <li key={book.id}>{book.title}</li>
+        ))} */}
+        <li>qwe</li>
+      </ul>
+    );
   }
 }
 
