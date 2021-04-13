@@ -32,21 +32,27 @@ class AuthorsView extends Component {
           ))}
         </ul>
 
-        <Route
-          path={`${path}/:authorId`}
-          render={props => {
-            // *здесь не нужно this, т.к. мы выполняем код непосредственно в Route и обращаемся к дефолтным пропам этого же компонента
+        {this.state.authors.length > 0 && (
+          <Route
+            path={`${path}/:authorId`}
+            render={props => {
+              // *здесь не нужно this, т.к. мы выполняем код непосредственно в Route и обращаемся к дефолтным пропам этого же компонента
 
-            const bookId = Number(props.match.params.authorId);
+              const bookId = Number(props.match.params.authorId);
 
-            // *здесь также используем find, но получаем данные не из пропсов, а из стейта
+              // *здесь также используем find, но получаем данные не из пропсов, а из стейта
 
-            const author = this.state.authors.find(({ id }) => id === bookId);
-            console.log(author);
+              const author = this.state.authors.find(({ id }) => id === bookId);
 
-            return <AuthorBooks {...props} authors={authors} />;
-          }}
-        />
+              if (author) {
+                console.log(author.books);
+              }
+              console.log(author);
+
+              return <AuthorBooks {...props} authors={authors} />;
+            }}
+          />
+        )}
       </>
     );
   }
