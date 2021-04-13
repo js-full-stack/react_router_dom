@@ -340,12 +340,13 @@ _Есть несколько способов сделать так, чтобы 
 ---
 
 В параметр `props` метода `render` приходят дефолтные пропсы, которые есть на
-Route: нistory, location, match. Мы их распыляем, чтобы далее использовать в
-компоненте `AuthorsBooks`.
+Route: `нistory`, `location`, `match`. Мы их распыляем, чтобы далее использовать
+в компоненте `AuthorsBooks`.
 
 Теперь пропы доступны в `AuthorBooks` и можно получить нужные данные:
-`this.props.match.params.authorId` - динамический параметр (`id`),
-`this.props.authors` - массив авторов
+
+- `this.props.match.params.authorId` - динамический параметр (`id`),
+- `this.props.authors` - массив авторов
 
 При клике на `<Link>` в компонент `AuthorsBooks` приходят новые пропсы. При этом
 компонент `AuthorsView` не размонтируется, а `AuthorsBooks` рендерится как
