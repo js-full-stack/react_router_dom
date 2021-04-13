@@ -6,29 +6,26 @@ class AuthorBooks extends Component {
   };
 
   componentDidMount() {
-    console.log('componentDidMount');
+    // * Вытягиваем динамический параметр authorId, переданный через path Route
+    // * в родительском компоненте и сразу преобразовываем к числу, т.к. id в БД хранится числом, а не строкой
     const id = Number(this.props.match.params.authorId);
 
-    const books = this.props.authors.find(author => author.id === id);
+    // *Деструктуризируем массив books из объекта author и ищем книги выбранного автора через find
+    const { books } = this.props.authors.find(author => author.id === id);
 
+    // *Теперь запишем книги в стейт
     this.setState({ books });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log('componentDidUpdate');
-    console.log(Number(this.props.match.params.authorId));
-    console.log(this.props.authors);
-  }
-
+  //  *Пройдемся мэпом и отрендерим
   render() {
-    // const { books } = this.state.books;
-    // console.log(books);
+    const { books } = this.state;
+    console.log(books);
     return (
       <ul>
-        {/* {books.map(book => (
+        {books.map(book => (
           <li key={book.id}>{book.title}</li>
-        ))} */}
-        <li>qwe</li>
+        ))}
       </ul>
     );
   }
