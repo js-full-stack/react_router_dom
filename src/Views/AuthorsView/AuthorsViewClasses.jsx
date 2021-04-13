@@ -32,8 +32,8 @@ class AuthorsView extends Component {
           ))}
         </ul>
 
-        {this.state.authors.length > 0 && (
-          <Route
+        {
+          /* this.state.authors.length > 0 &&  */ <Route
             path={`${path}/:authorId`}
             render={props => {
               // *здесь не нужно this, т.к. мы выполняем код непосредственно в Route и обращаемся к дефолтным пропам этого же компонента
@@ -49,10 +49,11 @@ class AuthorsView extends Component {
               }
               console.log(author);
 
-              return <AuthorBooks {...props} authors={authors} />;
+              // * Асли массив author не пуст, возвращаем спсок книг, иначе null
+              return author && <AuthorBooks {...props} books={author.books} />;
             }}
           />
-        )}
+        }
       </>
     );
   }
