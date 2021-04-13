@@ -34,7 +34,18 @@ class AuthorsView extends Component {
 
         <Route
           path={`${path}/:authorId`}
-          render={props => <AuthorBooks {...props} authors={authors} />}
+          render={props => {
+            // *здесь не нужно this, т.к. мы выполняем код непосредственно в Route и обращаемся к дефолтным пропам этого же компонента
+
+            const bookId = Number(props.match.params.authorId);
+
+            // *здесь также используем find, но получаем данные не из пропсов, а из стейта
+
+            const author = this.state.authors.find(({ id }) => id === bookId);
+            console.log(author);
+
+            return <AuthorBooks {...props} authors={authors} />;
+          }}
         />
       </>
     );

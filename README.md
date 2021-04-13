@@ -394,4 +394,26 @@ Route: `нistory`, `location`, `match`. Мы их распыляем, чтобы
 
 Проблема вышеприведенного решения в том, что компонент `AuthorBooks` принимает
 слишком много данных, а нам нужно сделать его максимально "плоским". Поэтому
-перенесем логику в родительский компонент `AuthorsView`.
+перенесем логику в родительский компонент `AuthorsView`, а именно в `Route`
+
+```
+<Route
+          path={`${path}/:authorId`}
+          render={props => {
+            const bookId = Number(props.match.params.authorId);
+             const author = this.state.authors.find(({ id }) => id === bookId);
+
+            console.log(author);
+            return <AuthorBooks {...props} authors={authors} />;
+          }}
+        />
+
+
+```
+
+В переменной author хранится объект, у которого есть свойство books - массив
+книг, но на первом рендере, пока мы не выбрали автора на странице, массив
+остается пустым. **Чтобы не было ошибки нужно рендерить Route по условию, только
+в том случае, если длина массива authors > 0.**
+
+`{this.state.authors.length > 0 && <Route/>}`
