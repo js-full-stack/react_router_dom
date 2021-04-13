@@ -29,8 +29,12 @@
 ## [Код с занятия](#allcode)
 
 [Код компонента BooksViewClasses](#booksviewclasses)
+
 [Код компонента AuthorsVies](#authorsview)
-[Код компонента AuthorBooks](#authorbooks) [Код компонента App][#app]
+
+[Код компонента AuthorBooks](#authorbooks)
+
+[Код компонента App](#app)
 
 ---
 
