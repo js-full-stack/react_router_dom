@@ -159,7 +159,7 @@ html-элемент_
 
 1. Создаем компонент NotFoundView с сообщением, которое будет выводиться при
    запросе по несуществующим адресам
-2. Добавляем в App `{Route component={NotFoundView}}`
+2. Добавляем в App `<Route component={NotFoundViews} />`
 3. Проп `path` не указан, поэтому `NotFoundView` рендерится всегда. Чтобы это
    поправить, нужен компонент `Switch` из react-router-dom
 
