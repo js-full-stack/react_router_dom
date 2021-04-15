@@ -660,7 +660,7 @@ export default App;
 при медленном интернете.
 
 1. Сделать `import { lazy } from 'react'`;
-2. Вместо обычного импорта прописать импорт с lazt.
+2. Вместо обычного импорта прописать импорт с lazy.
 
 Было: `import HomePage from './Pages/HomePage'`
 
