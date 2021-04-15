@@ -591,6 +591,8 @@ export default BooksView;
 
 ```
 
+#### BookDetailsView
+
 ```
 import { Component } from 'react';
 import axios from 'axios';
